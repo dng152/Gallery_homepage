@@ -137,6 +137,7 @@
     const prevButton = document.getElementById("prev");
     const totalSlides = slides.length;
     let currentIndex = 0;
+    let slideInterval;
 
     const showSlide = (index) => {
       slides.forEach((slide) => {
@@ -157,6 +158,9 @@
 
     nextButton.addEventListener("click", nextSlide);
     prevButton.addEventListener("click", prevSlide);
+
+    // Auto slide every 6 seconds
+    slideInterval = setInterval(nextSlide, 6000);
   </script>
 </body>
 
