@@ -156,8 +156,17 @@
       showSlide(currentIndex);
     };
 
-    nextButton.addEventListener("click", nextSlide);
-    prevButton.addEventListener("click", prevSlide);
+    nextButton.addEventListener("click", () => {
+      nextSlide();
+      clearInterval(slideInterval); // Reset interval on button click
+      slideInterval = setInterval(nextSlide, 6000); // Restart interval
+    });
+
+    prevButton.addEventListener("click", () => {
+      prevSlide();
+      clearInterval(slideInterval); // Reset interval on button click
+      slideInterval = setInterval(nextSlide, 6000); // Restart interval
+    });
 
     // Auto slide every 6 seconds
     slideInterval = setInterval(nextSlide, 6000);
