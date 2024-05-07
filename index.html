@@ -36,13 +36,20 @@
       height: 100%;
       opacity: 0;
       transition: opacity 0.4s ease-in-out;
-      background-size: contain; /* Updated to scale images within the container */
-      background-repeat: no-repeat; /* Prevent image from repeating */
-      background-position: center center; /* Center the image */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .slide.current {
       opacity: 1;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
     }
 
     .buttons {
@@ -84,23 +91,16 @@
 
 <body>
   <div class="slider">
-    <!-- Retaining the links to the image files -->
-    <div class="slide current" style="background: url('1.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('2.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('3.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('4.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('5.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('6.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('7.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('8.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('9.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('10.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('11.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('12.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('9.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('10.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('11.png') no-repeat center center;"></div>
-    <div class="slide" style="background: url('16.png') no-repeat center center;"></div>
+    <div class="slide current">
+      <img src="1.png" alt="Image 1">
+    </div>
+    <div class="slide">
+      <img src="2.png" alt="Image 2">
+    </div>
+    <div class="slide">
+      <img src="3.png" alt="Image 3">
+    </div>
+    <!-- Add more slides as needed -->
   </div>
   <div class="buttons">
     <button id="prev"><i class="fas fa-arrow-left"></i></button>
